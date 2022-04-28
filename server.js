@@ -8,6 +8,7 @@ const artists = [{
   albums:[
     {
     name:"Yours Truly",
+    year:2013,
     songs:[
       {
       name: "Hearts Up",
@@ -16,6 +17,7 @@ const artists = [{
   },
   {
     name:"My Everything",
+    year:2014,
     songs:[
       {
       name: "Hearts Up",
@@ -24,6 +26,7 @@ const artists = [{
   },
   {
     name:"Dangerous Woman",
+    year:2016,
     songs:[
       {
       name: "Hearts Up",
@@ -32,6 +35,7 @@ const artists = [{
   },
   {
     name:"Sweetener",
+    year:2018,
     songs:[
       {
       name: "Hearts Up",
@@ -40,6 +44,7 @@ const artists = [{
   },
   {
     name:"Thank You, Next",
+    year:2019,
     songs:[
       {
       name: "Hearts Up",
@@ -48,6 +53,7 @@ const artists = [{
   },
   {
     name:"Positions",
+    year:2021,
     songs:[
       {
       name: "Hearts Up",
@@ -73,6 +79,7 @@ type Artist {
 type Album {
   id: Int
   name: String
+  year:Int
   songs:[Song]
 }
 type Song {
