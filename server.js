@@ -69,7 +69,7 @@ const schema = buildSchema(`
 type Query {
 hello: String
 artist(artistName : String!):Artist
-albums(artistName : String!):[Album]
+albums(artistName : String!):Album
 } 
 type Artist {
     id: Int
