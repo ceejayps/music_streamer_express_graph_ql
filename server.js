@@ -69,7 +69,7 @@ const schema = buildSchema(`
 type Query {
 hello: String
 artist(artistName : String!):Artist
-albums(artistName : String!):Album
+albums(artistName : String!):[Album]
 } 
 type Artist {
     id: Int
@@ -101,9 +101,11 @@ const root = {
    return artists.find(artist => artist.name =artistName)
   },
   albums:({artistName})=>{
-    console.log (artists.find(artist => artist.name =artistName).albums);
-    result = artists.find(artist => artist.name =artistName).albums
-    return result
+    //console.log (artists.find(artist => artist.albums.name =artistName));
+    result = artists.find(artist => artist.albums.name =artistName).albums
+    album = result.find(result => result.name = artistName)
+     console.log(album)
+   return album
    
    }
 }
