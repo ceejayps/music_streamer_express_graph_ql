@@ -68,7 +68,8 @@ const artists = [{
 const schema = buildSchema(`
 type Query {
 hello: String
-artist:Artist
+artist(artistName : String!):Artist
+albums(artistName : String!):Album
 } 
 type Artist {
     id: Int
@@ -96,9 +97,15 @@ type Song {
 
 const root = { 
   hello: () => 'Hello world!',
-  artist:()=>{
-   return artists[0]
-  }
+  artist:({artistName})=>{
+   return artists.find(artist => artist.name =artistName)
+  },
+  albums:({artistName})=>{
+    console.log (artists.find(artist => artist.name =artistName).albums);
+    result = artists.find(artist => artist.name =artistName).albums
+    return result
+   
+   }
 }
 
 const app = express();
